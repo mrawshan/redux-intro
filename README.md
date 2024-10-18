@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Note: This is an overview of Redux, comparing the traditional way of writing Redux code with the newer approach (RTC). It also covers Thunk, which serves as a middleware in Redux.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
