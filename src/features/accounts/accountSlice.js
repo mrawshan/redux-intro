@@ -22,9 +22,9 @@ const accountSlice = createSlice({
 			// crrState.balance = crrState.balance - action.payload;
 			crrState.balance -= action.payload;
 		},
-		// These automatically created action creaters can recive only 1 argument, and that then become actione.payload (In this case we have 2 arguments, so in this situation we have to write like this)
+		// These automatically created action creaters can recive only 1 argument, and that then become actione.payload (In this case we have 2 arguments, so in this situation we have to write like this: using prepare method)
 		requestLoan: {
-			// Prepare that data(requestLoan arguments) with prepare method
+			// Prepare that data(requestLoan arguments) using prepare method
 			prepare(amount, purpose) {
 				return { payload: { amount, purpose } };
 			},
@@ -53,7 +53,7 @@ const accountSlice = createSlice({
 // Creating Action creater functions
 export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
 
-// Thunk (Middleware) using action creater function
+// Thunk (Middleware) using action creater function (For Asynchronous action)
 export function deposit(amount, currency) {
 	if (currency === 'USD') return { type: 'account/deposit', payload: amount };
 
@@ -74,4 +74,5 @@ export function deposit(amount, currency) {
 	};
 }
 
+// Exporting reducer function to get access in the store
 export default accountSlice.reducer;

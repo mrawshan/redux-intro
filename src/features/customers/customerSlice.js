@@ -12,7 +12,9 @@ const customerSlice = createSlice({
 	name: 'customer',
 	initialState,
 	reducers: {
+		// These automatically created action creaters can recive only 1 argument, and that then become actione.payload (In this case we have 2 arguments, so in this situation we have to write like this: using prepare method)
 		createCustomer: {
+			// Prepare that data(createCustomer arguments) using prepare method
 			prepare(fullName, nationalId) {
 				return {
 					payload: {
@@ -39,4 +41,5 @@ const customerSlice = createSlice({
 // Creating Action creater functions
 export const { createCustomer, updateName } = customerSlice.actions;
 
+// Exporting reducer function to get access in the store
 export default customerSlice.reducer;
