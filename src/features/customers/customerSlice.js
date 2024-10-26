@@ -7,7 +7,7 @@ const initialState = {
 	createdAt: '',
 };
 
-// Modern way of writing slice using (RTC)
+// Modern way of writing slice using (RTK)
 const customerSlice = createSlice({
 	name: 'customer',
 	initialState,
