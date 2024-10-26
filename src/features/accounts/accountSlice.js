@@ -8,7 +8,7 @@ const initialState = {
 	isLoading: false,
 };
 
-// Modern way of writing slice using (RTK)
+// 01) Creating the slice: Modern way of writing slice using (RTK)
 const accountSlice = createSlice({
 	name: 'account',
 	initialState,
